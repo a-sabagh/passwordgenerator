@@ -1,16 +1,45 @@
 $(document).ready(function () {
     //default password length
-    $("#password-length").val("10");
+
     //default check
-    var init_check = function(value){
-        $(value).prop("checked" , true);
-    }
-    var callbacks = $.Callbacks();
-    callbacks.add(init_check);
-    callbacks.fire("#password-includeN");
-    callbacks.fire("#password-includeL");
-    callbacks.fire("#password-includeU");
-    callbacks.empty();
+    $("#password-length").val("8");
+    $("#password-includeS").prop("checked" , false);
+    $("#password-includeN").prop("checked" , true);
+    $("#password-includeL").prop("checked" , true);
+    $("#password-includeU").prop("checked" , true);
+    $("#password-includeA").prop("checked" , false);
+
+    $(".general-option").change(function(){
+        var option_class = $(".general-option").find("option:selected").attr('class');
+        if(option_class == 'level_1'){
+            $("#password-length").val("8");
+            $("#password-includeS").prop("checked" , false);
+            $("#password-includeN").prop("checked" , true);
+            $("#password-includeL").prop("checked" , true);
+            $("#password-includeU").prop("checked" , true);
+            $("#password-includeA").prop("checked" , false);
+        }
+        if(option_class == 'level_2'){
+            $("#password-length").val("12");
+            $("#password-includeS").prop("checked" , true);
+            $("#password-includeN").prop("checked" , true);
+            $("#password-includeL").prop("checked" , true);
+            $("#password-includeU").prop("checked" , true);
+            $("#password-includeA").prop("checked" , false);
+        }
+        if(option_class == 'level_3'){
+            $("#password-length").val("16");
+            $("#password-includeS").prop("checked" , true);
+            $("#password-includeN").prop("checked" , true);
+            $("#password-includeL").prop("checked" , true);
+            $("#password-includeU").prop("checked" , true);
+            $("#password-includeA").prop("checked" , true);
+        }
+    });
+    
+
+
+
     //generate password function
     $(".generate-password").click(function () {
         var password_length = $("#password-length").val();

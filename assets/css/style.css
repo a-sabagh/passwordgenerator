@@ -63,8 +63,9 @@ header{
     color: #008040;
 }
 #password-length{
-    width: 70%;
-    padding: 6px;
+    width: 100%;
+    padding: 4px;
+    box-sizing: border-box;
 }
 .generate-password {
     padding: 8px;
@@ -77,43 +78,8 @@ header{
     box-shadow: 0 1px 3px 0px rgba(0,0,0,0.4);
     border: 1px #f8f8f8 solid;
 }
-#AriazDevs {
-    display: inline-block;
-    margin: 0;
-    padding: 0;
-    font-size: 12px;
-}
-#AriazDevs a:hover , 
-#AriazDevs a:focus,
-#AriazDevs a:active,
-#AriazDevs a:visited{
-    text-decoration: none;
-    outline: none;
-    color: inherit;
-}
-#AriazDevs a{
-    text-decoration: none;
-    font-weight: bold;
-    transition: all .5s;
-    -webkit-transition: all .5s;
-    -moz-transition: all .5s;
-    -o-transition: all .5s;
-}
-#AriazDevs a:hover{
-    color: #00a2b1;
-    transition: all .5s;
-    -webkit-transition: all .5s;
-    -moz-transition: all .5s;
-    -o-transition: all .5s;
-}
-#AriazDevs img {
-    vertical-align: middle;
-}
-.footer {
-    display: block;
-    border-top: 1px solid #dfdfdf;
-    padding-top: 10px;
-    text-align: center;
+.general-option{
+    width: 100%;
 }
 
 /*--------------- Responsive -------------------*/
