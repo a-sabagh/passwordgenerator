@@ -1,0 +1,164 @@
+/*
+====================================================
+screen (1200px) and (992px) and (768px) and (480px)|
+====================================================
+*/
+
+/*--------------- screen -------------------*/
+@font-face{
+	font-family: 'IranianSans';
+	src: url(../font/IranianSans.woff);
+	font-style: normal;
+}
+body{
+	background: #222222;
+	font-family: IranianSans;
+}
+input , p , label , h1 , h2 , h3 {
+	font-family: IranianSans;
+}
+label{
+	cursor: pointer;
+    font-size: 16.5px;
+}
+a{color: black;}
+header{
+	border-bottom: 1px solid #dfdfdf;
+	padding-bottom: 8px;
+	margin: 0 auto;
+}
+.rng-container{
+	width: 70%;
+	margin: 30px auto;
+	padding: 50px 30px 10px 30px;
+	background: #ffffff;
+	line-height: 23px;
+	border: 1px solid #dfdfdf;
+	border-radius: 10px 10px;
+	overflow: hidden;
+}
+.key{
+	display: inline-block;
+	margin-left: 10px;
+}
+.title{
+	display: inline-block;
+	vertical-align: top;
+    font-size: 25px;
+}
+.table-option .column{
+	padding: 5px 15px;
+    display: inline-block;
+    width: 35%;
+    font-size: 16.5px;
+}
+.btn{
+	margin: 50px 0;
+}
+.password-input {
+    width: 50%;
+    font-size: 15px;
+    padding: 7px;
+    line-height: 25px;
+    color: #008040;
+}
+#password-length{
+    width: 70%;
+    padding: 6px;
+}
+.generate-password {
+    padding: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    line-height: 25px;
+    text-align: center;
+    color: #555;
+    text-shadow: 1px 1px 0px white;
+    box-shadow: 0 1px 3px 0px rgba(0,0,0,0.4);
+    border: 1px #f8f8f8 solid;
+}
+#AriazDevs {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+}
+#AriazDevs a:hover , 
+#AriazDevs a:focus,
+#AriazDevs a:active,
+#AriazDevs a:visited{
+    text-decoration: none;
+    outline: none;
+    color: inherit;
+}
+#AriazDevs a{
+    text-decoration: none;
+    font-weight: bold;
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -o-transition: all .5s;
+}
+#AriazDevs a:hover{
+    color: #00a2b1;
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -o-transition: all .5s;
+}
+#AriazDevs img {
+    vertical-align: middle;
+}
+.footer {
+    display: block;
+    border-top: 1px solid #dfdfdf;
+    padding-top: 10px;
+    text-align: center;
+}
+
+/*--------------- Responsive -------------------*/
+@media screen and (max-width: 768px){
+    .table-option .column{
+        padding: 5px 15px;
+        display: block;
+        width: 90%;
+        margin: auto;
+    }
+}
+@media screen and (max-width: 480px) {
+    .screen{
+        display: none;
+    }
+    header{
+        text-align: center;
+    }
+    .title{
+        text-align: center;
+        display: block;
+        font-size: 18.5px;
+    }
+    .key{
+        float: none;
+        display: inline-block;
+    }
+    .table-option .column{
+        text-align: center;
+        font-size: 14px;
+    }
+    .table-option .column:nth-child(2n){
+        text-align: right;
+    }
+    br{
+        display: none;
+    }
+    label{
+        font-size: 14px;
+    }
+    .generate-password{
+        width: 100%;
+    }
+    .password-input{
+        width: 100%;
+        box-sizing: border-box;
+    }
+}

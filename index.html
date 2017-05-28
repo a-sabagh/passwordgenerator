@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="fa_IR">
+<head>
+	<title>تولید کننده پسوورد های ایمن</title>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Abolfazl Sabagh" />
+	<meta name="description" content="تولید کننده پسوورد های ایمن و غیر قابل حدس و مقاوم در برابر هک " />
+	<meta name="keywords" content="گذرواژه غیر قابل حدس , گذرواژه غیر قابل هک , passwordGenerator , password-generator , security" />
+	<meta name="robots" content="noodp"/>
+	<link rel="shortcut icon" href="assets/img/key.png" />
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<body>
+	<div class="rng-container">
+		<header>
+			<img class="key" src="assets/img/key.png" alt="ایجاد کننده پسوورد های ایمن" title="توسعه گران آریاز">
+			<h2 class="title">پسوورد ایمن بسازید</h2>
+		</header>
+
+		<br><br><br><br>
+
+		<div class="options">
+			<div class="table-option">
+				<div class="row">
+					<div class="column">طول پسوورد </div>
+					<div class="column">
+						<input type="number" min="1" max="100" name="password_lenght" id="password-length">
+					</div>
+				</div>
+				<div class="row">
+					<div class="column">پسوورد شامل علامت ها باشد:</div>
+					<div class="column">
+						<input type="checkbox" name="password_includeS" id="password-includeS">
+						<label for="password-includeS">(بطور مثال : @#$%)</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="column">پسوورد شامل اعداد صحیح باشد: </div>
+					<div class="column">
+						<input type="checkbox" name="password_includeN" id="password-includeN">
+						<label for="password-includeN">(بطور مثال 12345)</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="column">پسوورد شامل حروف بزرگ انگلیسی باشد: </div>
+					<div class="column">
+						<input type="checkbox" name="password_includeL" id="password-includeL">
+						<label for="password-includeL">(بطور مثال abcdef)</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="column">پسوورد شامل حروف بزرگ انگلیسی باشد: </div>
+					<div class="column">
+						<input type="checkbox" name="password_includeU" id="password-includeU">
+						<label for="password-includeU">(بطور مثال ABCDEF)</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="column">پسوورد شامل کاراکتر های مبهم باشد: </div>
+					<div class="column">
+						<input type="checkbox" name="password_includeA" id="password-includeA">
+						<label for="password-includeA">(بطور مثال  {}[]()/\'"`~,;:.<)</label>
+					</div>
+				</div>
+			</div>
+		</div><!--.options-->
+		<div class="btn">
+			<input type="button" name="generate_password" class="generate-password" value="ساخت پسوورد">		
+			<input type="text" name="password_input" class="password-input">
+		</div><!--.btn-->
+	</div><!--.container-->
+	<script type="text/javascript" src="assets/js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="assets/js/script.js"></script>
+</body>
+</html>
