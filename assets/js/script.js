@@ -43,6 +43,9 @@ $(document).ready(function () {
     //generate password function
     $(".generate-password").click(function () {
         var password_length = $("#password-length").val();
+        if(password_length > 100){
+        	password_length = 100;
+        }
         var content = '';
         if($("#password-includeS").is(":checked")){
             content += "~!@#$%^&*()_-";    
