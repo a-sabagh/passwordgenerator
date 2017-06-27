@@ -6,54 +6,54 @@ screen (1200px) and (992px) and (768px) and (480px)|
 
 /*--------------- screen -------------------*/
 @font-face{
-	font-family: 'IranianSans';
-	src: url(../font/IranianSans.woff);
-	font-style: normal;
+    font-family: 'IranianSans';
+    src: url(../font/IranianSans.woff);
+    font-style: normal;
 }
 body{
-	background: #222222;
-	font-family: IranianSans;
+    background: #222222;
+    font-family: IranianSans;
 }
 input , p , label , h1 , h2 , h3 {
-	font-family: IranianSans;
+    font-family: IranianSans;
 }
 label{
-	cursor: pointer;
+    cursor: pointer;
     font-size: 16.5px;
 }
 a{color: black;}
 header{
-	border-bottom: 1px solid #dfdfdf;
-	padding-bottom: 8px;
-	margin: 0 auto;
+    border-bottom: 1px solid #dfdfdf;
+    padding-bottom: 8px;
+    margin: 0 auto;
 }
 .rng-container{
-	width: 70%;
-	margin: 30px auto;
-	padding: 50px 30px 10px 30px;
-	background: #ffffff;
-	line-height: 23px;
-	border: 1px solid #dfdfdf;
-	border-radius: 10px 10px;
-	overflow: hidden;
+    width: 70%;
+    margin: 30px auto;
+    padding: 50px 30px 10px 30px;
+    background: #ffffff;
+    line-height: 23px;
+    border: 1px solid #dfdfdf;
+    border-radius: 10px 10px;
+    overflow: hidden;
 }
 .key{
-	display: inline-block;
-	margin-left: 10px;
+    display: inline-block;
+    margin-left: 10px;
 }
 .title{
-	display: inline-block;
-	vertical-align: top;
+    display: inline-block;
+    vertical-align: top;
     font-size: 25px;
 }
 .table-option .column{
-	padding: 5px 15px;
+    padding: 5px 15px;
     display: inline-block;
     width: 35%;
     font-size: 16.5px;
 }
 .btn{
-	margin: 50px 0;
+    margin: 50px 0;
 }
 .password-input {
     width: 50%;

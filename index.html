@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html dir="rtl" lang="fa_IR">
+<html dir="rtl" lang="fa-IR">
 <head>
 	<title>تولید کننده پسوورد های ایمن</title>
 	<meta charset="UTF-8">
@@ -10,20 +10,52 @@
 	<meta name="robots" content="noodp"/>
 	<link rel="shortcut icon" href="assets/img/key.png" />
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<script type="text/javascript" src="assets/js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+		function getCookie(name) {
+			var value = "; " + document.cookie;
+			var parts = value.split("; " + name + "=");
+			if (parts.length == 2) return parts.pop().split(";").shift();
+		}
+		$(document).ready(function () {
+			$(".generate-password").click(function () {
+				var save_pref = $("#save-preference").prop("checked");
+				document.cookie = "save_pref=" + save_pref;
+				if(save_pref == true){
+					var password_length = $("#password-length").val();
+					var includeS = $("#password-includeS").prop("checked");
+					var includeN = $("#password-includeN").prop("checked");
+					var includeL = $("#password-includeL").prop("checked");
+					var includeU = $("#password-includeU").prop("checked");
+					var includeA = $("#password-includeA").prop("checked");
+					document.cookie = "password_len=" + password_length;
+					document.cookie = "includeS=" + includeS;
+					document.cookie = "includeN=" + includeN;
+					document.cookie = "includeL=" + includeL;
+					document.cookie = "includeU=" + includeU;
+					document.cookie = "includeA=" + includeA;
+				}
+			});
+		});
+	</script>
+	<script type="text/javascript" src="assets/js/script.js"></script>
 </head>
 <body>
 	<div class="rng-container">
 		<header>
-			<img class="key" src="assets/img/key.png" alt="ایجاد کننده پسوورد های ایمن" title="توسعه گران آریاز">
-			<h2 class="title">پسوورد ایمن بسازید</h2>
+			<img class="key" src="assets/img/key.png" alt="ایجاد کننده گذرواژه های ایمن" >
+			<h2 class="title">گذرواژه ایمن بسازید</h2>
 		</header>
+
 		<br><br><br><br>
+
 		<div class="options">
 			<div class="table-option">
 				<div class="row">
 					<div class="column">سطوح تولید پسوورد</div>
 					<div class="column">
 						<select name="general_option" class="general-option">
+							<option class="none">انتخاب</option>
 							<option class="level_1">متوسط</option>
 							<option class="level_2">قوی</option>
 							<option class="level_3">پیشرفته</option>
@@ -31,54 +63,59 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="column">طول پسوورد </div>
+					<div class="column">طول گذرواژه </div>
 					<div class="column">
-						<input type="number" min="1" max="100" name="password_lenght" id="password-length">
+						<input type="number" min="1" max="32" name="password_lenght" id="password-length">
 					</div>
 				</div>
 				<div class="row">
-					<div class="column">پسوورد شامل علامت ها باشد:</div>
+					<div class="column">گذرواژه شامل علامت ها باشد:</div>
 					<div class="column">
 						<input type="checkbox" name="password_includeS" id="password-includeS">
 						<label for="password-includeS">(بطور مثال : @#$%)</label>
 					</div>
 				</div>
 				<div class="row">
-					<div class="column">پسوورد شامل اعداد صحیح باشد: </div>
+					<div class="column">گذرواژه شامل اعداد صحیح باشد: </div>
 					<div class="column">
 						<input type="checkbox" name="password_includeN" id="password-includeN">
 						<label for="password-includeN">(بطور مثال 12345)</label>
 					</div>
 				</div>
 				<div class="row">
-					<div class="column">پسوورد شامل حروف بزرگ انگلیسی باشد: </div>
+					<div class="column">گذرواژه شامل حروف بزرگ انگلیسی باشد: </div>
 					<div class="column">
 						<input type="checkbox" name="password_includeL" id="password-includeL">
 						<label for="password-includeL">(بطور مثال abcdef)</label>
 					</div>
 				</div>
 				<div class="row">
-					<div class="column">پسوورد شامل حروف بزرگ انگلیسی باشد: </div>
+					<div class="column">گذرواژه شامل حروف بزرگ انگلیسی باشد: </div>
 					<div class="column">
 						<input type="checkbox" name="password_includeU" id="password-includeU">
 						<label for="password-includeU">(بطور مثال ABCDEF)</label>
 					</div>
 				</div>
 				<div class="row">
-					<div class="column">پسوورد شامل کاراکتر های مبهم باشد: </div>
+					<div class="column">گذرواژه شامل کاراکتر های مبهم باشد: </div>
 					<div class="column">
 						<input type="checkbox" name="password_includeA" id="password-includeA">
 						<label for="password-includeA">(بطور مثال  {}[]()/\'"`~,;:.<)</label>
 					</div>
 				</div>
+				<div class="row">
+					<div class="column">ذخیره تنظیمات</div>
+					<div class="column">
+						<input type="checkbox" name="save_preference" id="save-preference">
+						<label for="save-preference">(ذخیره تنظیمات برای مراجعه بعدی)</label>
+					</div>
+				</div>
 			</div>
 		</div><!--.options-->
 		<div class="btn">
-			<input type="button" name="generate_password" class="generate-password" value="ساخت پسوورد">		
+			<input type="button" name="generate_password" class="generate-password" value="ساخت گذرواژه">		
 			<input type="text" name="password_input" class="password-input">
 		</div><!--.btn-->
 	</div><!--.container-->
-	<script type="text/javascript" src="assets/js/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" src="assets/js/script.js"></script>
 </body>
 </html>
