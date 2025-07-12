@@ -109,7 +109,7 @@ header{
     background-color: #0056b3;
 }
 .copy-password-btn.copy-success {
-    background-color: #4CAF50 !important;
+    background-color: #008040 !important;
     transition: background-color 0.3s ease;
 }
 #password-length{
