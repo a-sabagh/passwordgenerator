@@ -203,6 +203,12 @@ select{
     }
 }
 @media screen and (max-width: 480px) {
+    .rng-container {
+        width: initial;
+        margin: unset;
+        padding-right: 25px;
+        padding-left: 25px;
+    }
     .table-option .column {
         font-size: 14px;
         text-align: center;
