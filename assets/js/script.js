@@ -250,6 +250,6 @@ $(document).ready(function () {
 
         setTimeout(() => {
             copyBtn.text(originalText).removeClass("copy-success");
-        }, 1000);
+        }, 1500);
     }
 });
