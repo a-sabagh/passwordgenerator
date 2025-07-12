@@ -86,10 +86,31 @@ header{
 }
 .password-input {
     width: 56%;
+    direction: ltr;
+    text-align: center;
     font-size: 15px;
     padding: 7px;
     line-height: 25px;
     color: #008040;
+}
+.copy-password-btn {
+    padding: 8px 15px;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    border: 1px #f8f8f8 solid;
+    border-radius: 5px;
+    font-family: 'Vazir';
+    box-shadow: 0 1px 3px 0px rgba(0,0,0,0.4);
+    text-shadow: 1px 1px 0px rgba(255,255,255,0.3);
+}
+.copy-password-btn:hover {
+    background-color: #0056b3;
+}
+.copy-password-btn.copy-success {
+    background-color: #4CAF50 !important;
+    transition: background-color 0.3s ease;
 }
 #password-length{
     width: 80%;
@@ -106,9 +127,6 @@ header{
     text-shadow: 1px 1px 0px white;
     box-shadow: 0 1px 3px 0px rgba(0,0,0,0.4);
     border: 1px #f8f8f8 solid;
-}
-.general-option{
-    ! width: 100%; 
 }
 select{
     width: 80%;
@@ -134,14 +152,6 @@ select{
 }
 /*--------------- Responsive -------------------*/
 @media screen and (max-width: 768px){
-    .table-option .column{
-        padding: 5px 15px;
-        display: block;
-        width: 90%;
-        margin: auto;
-    }
-}
-@media screen and (max-width: 480px) {
     .screen{
         display: none;
     }
@@ -158,11 +168,19 @@ select{
         display: inline-block;
     }
     .table-option .column{
-        text-align: center;
-        font-size: 14px;
+        padding: 5px 15px;
+        display: block;
+        width: 90%;
+        margin: auto;
     }
     .table-option .column:nth-child(2n){
         text-align: right;
+    }
+    .general-option {
+        width: 100%;
+    }
+    #password-length {
+        width: 100%;
     }
     br{
         display: none;
@@ -176,6 +194,18 @@ select{
     .password-input{
         width: 100%;
         box-sizing: border-box;
+        margin-top: 15px;
+    }
+    .copy-password-btn {
+        width: 100%;
+        margin-top: 10px;
+        margin-right: 0;
+    }
+}
+@media screen and (max-width: 480px) {
+    .table-option .column {
+        font-size: 14px;
+        text-align: center;
     }
 }
 footer{

@@ -213,11 +213,43 @@ $(document).ready(function () {
             $(this).next().val(password);
         }
     });
-$(".password-input").click(function(){
-    $(this).select();
-});
-$('.return-top').click(function(){
-    $("html, body").animate({ scrollTop: 0 }, 600);
-    return false;
-});
+
+    $(".password-input").click(function(){
+        $(this).select();
+    });
+
+    $('.return-top').click(function(){
+        $("html, body").animate({ scrollTop: 0 }, 600);
+        return false;
+    });
+
+    $(".copy-password-btn").on("click", function () {
+        const passwordInput = $(".password-input");
+        let passwordValue = passwordInput.val()?.trim();
+
+        if (!passwordValue) {
+            $(".generate-password").trigger("click");
+        }
+
+        passwordValue = passwordInput.val()?.trim();
+
+        navigator.clipboard.writeText(passwordValue)
+            .then(() => {
+                showCopySuccess();
+            })
+            .catch(() => {
+                alert("خطا در کپی کردن پسورد");
+            });
+    });
+
+    function showCopySuccess() {
+        const copyBtn = $(".copy-password-btn");
+        const originalText = copyBtn.text();
+
+        copyBtn.text("کپی شد!").addClass("copy-success");
+
+        setTimeout(() => {
+            copyBtn.text(originalText).removeClass("copy-success");
+        }, 1000);
+    }
 });
