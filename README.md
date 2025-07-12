@@ -2,7 +2,7 @@
 
 A lightweight and customizable tool to generate strong, random passwords. Built with **HTML, CSS, and JavaScript** for simplicity and security.
 
-![Screenshot](https://https://github.com/a-sabagh/passwordgenerator/blob/master/screenshot.png)
+![Screenshot](./screenshot.png)
 
 ## Features
 - **Customizable passwords**: Adjust length (4-64 characters) and character types:
