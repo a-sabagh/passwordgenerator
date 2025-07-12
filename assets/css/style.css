@@ -5,17 +5,39 @@ screen (1200px) and (992px) and (768px) and (480px)|
 */
 
 /*--------------- screen -------------------*/
-@font-face{
-    font-family: 'IranianSans';
-    src: url(../font/IranianSans.woff);
-    font-style: normal;
+@font-face {
+    font-family: Vazir;
+    src: url('fonts/Vazir.eot');
+    src: url('fonts/Vazir.eot?#iefix') format('embedded-opentype'),
+        url('fonts/Vazir.woff') format('woff'),
+        url('fonts/Vazir.ttf') format('truetype');
+    font-weight: normal;
 }
+
+@font-face {
+    font-family: Vazir;
+    src: url('fonts/Vazir-Bold.eot');
+    src: url('fonts/Vazir-Bold.eot?#iefix') format('embedded-opentype'),
+        url('fonts/Vazir-Bold.woff') format('woff'),
+        url('fonts/Vazir-Bold.ttf') format('truetype');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: Vazir;
+    src: url('fonts/Vazir-Light.eot');
+    src: url('fonts/Vazir-Light.eot?#iefix') format('embedded-opentype'),
+        url('fonts/Vazir-Light.woff') format('woff'),
+        url('fonts/Vazir-Light.ttf') format('truetype');
+    font-weight: 300;
+}
+
 body{
     background: #222222;
-    font-family: IranianSans;
+    font-family: 'Vazir';
 }
 input , p , label , h1 , h2 , h3 {
-    font-family: IranianSans;
+    font-family: 'Vazir';
 }
 label{
     cursor: pointer;
@@ -30,19 +52,25 @@ header{
 .rng-container{
     width: 70%;
     margin: 30px auto;
-    padding: 50px 30px 10px 30px;
+    padding: 50px 40px 10px 40px;
     background: #ffffff;
     line-height: 23px;
     border: 1px solid #dfdfdf;
     border-radius: 10px 10px;
-    overflow: hidden;
 }
 .key{
     display: inline-block;
     margin-left: 10px;
 }
-.title{
+.title-wrapper{
     display: inline-block;
+}
+.sub-title{
+    font-size: 16px;
+    color: #555;
+    font-weight: normal;
+}
+.title{
     vertical-align: top;
     font-size: 25px;
 }
@@ -50,20 +78,21 @@ header{
     padding: 5px 15px;
     display: inline-block;
     width: 35%;
-    font-size: 16.5px;
+    font-size: 17px;
+    font-weight: lighter;
 }
 .btn{
     margin: 50px 0;
 }
 .password-input {
-    width: 50%;
+    width: 56%;
     font-size: 15px;
     padding: 7px;
     line-height: 25px;
     color: #008040;
 }
 #password-length{
-    width: 100%;
+    width: 80%;
     padding: 4px;
     box-sizing: border-box;
 }
@@ -79,9 +108,30 @@ header{
     border: 1px #f8f8f8 solid;
 }
 .general-option{
-    width: 100%;
+    ! width: 100%; 
 }
-
+select{
+    width: 80%;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    height: 34px;
+    text-transform: none;
+    line-height: 23px;
+    font-family: Vazir;
+}
+#tips{
+    margin: 20px auto;
+    text-align: right;
+    padding: 10px 20px;
+    border: 1px solid #4b99ff;
+    background: #ebfaff;
+    border-radius: 5px 5px;
+    font-size: 15px;
+}
+#tips p{
+    font-weight: lighter;
+    margin: 7px 0;
+}
 /*--------------- Responsive -------------------*/
 @media screen and (max-width: 768px){
     .table-option .column{
@@ -127,4 +177,17 @@ header{
         width: 100%;
         box-sizing: border-box;
     }
+}
+footer{
+    font-size: 14px;
+    text-align: center;
+    padding: 20px 50px 10px 50px;
+}
+footer a, footer a:link, footer a:visited {
+
+    text-decoration: none;
+    color: #0E62E4;
+}
+footer a.return-top {
+    color: inherit;
 }

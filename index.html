@@ -1,121 +1,152 @@
 <!DOCTYPE html>
 <html dir="rtl" lang="fa-IR">
-<head>
-	<title>تولید کننده پسوورد های ایمن</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="author" content="Abolfazl Sabagh" />
-	<meta name="description" content="تولید کننده پسوورد های ایمن و غیر قابل حدس و مقاوم در برابر هک " />
-	<meta name="keywords" content="گذرواژه غیر قابل حدس , گذرواژه غیر قابل هک , passwordGenerator , password-generator , security" />
-	<meta name="robots" content="noodp"/>
-	<link rel="shortcut icon" href="assets/img/key.png" />
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-	<script type="text/javascript" src="assets/js/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript">
-		function getCookie(name) {
-			var value = "; " + document.cookie;
-			var parts = value.split("; " + name + "=");
-			if (parts.length == 2) return parts.pop().split(";").shift();
-		}
-		$(document).ready(function () {
-			$(".generate-password").click(function () {
-				var save_pref = $("#save-preference").prop("checked");
-				document.cookie = "save_pref=" + save_pref;
-				if(save_pref == true){
-					var password_length = $("#password-length").val();
-					var includeS = $("#password-includeS").prop("checked");
-					var includeN = $("#password-includeN").prop("checked");
-					var includeL = $("#password-includeL").prop("checked");
-					var includeU = $("#password-includeU").prop("checked");
-					var includeA = $("#password-includeA").prop("checked");
-					document.cookie = "password_len=" + password_length;
-					document.cookie = "includeS=" + includeS;
-					document.cookie = "includeN=" + includeN;
-					document.cookie = "includeL=" + includeL;
-					document.cookie = "includeU=" + includeU;
-					document.cookie = "includeA=" + includeA;
-				}
-			});
-		});
-	</script>
-	<script type="text/javascript" src="assets/js/script.js"></script>
-</head>
-<body>
-	<div class="rng-container">
-		<header>
-			<img class="key" src="assets/img/key.png" alt="ایجاد کننده گذرواژه های ایمن" >
-			<h2 class="title">گذرواژه ایمن بسازید</h2>
-		</header>
+    <head>
+        <title>تولید پسورد آنلاین ایمن یا رمز عبور تصادفی غیر قابل کرک -  پسورد ساز</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Abolfazl Sabagh" />
+        <meta name="description" content="سرویس تولید پسورد آنلاین یا پسورد ساز  برای  ایجاد رمز های عبور ایمن و غیر قابل هک  و کرک با الگوریتم پیشرفته خود و پسورد هایی ایجاد می کند که قابل استفاده در اکانت های کاربری  می باشد. این سرویس تولید رمز عبور آنلاین دارای امکانات زیادی برای تولید پسورد نظیر انتخاب تعداد و نوع کاراکتر است." />
 
-		<br><br><br><br>
-
-		<div class="options">
-			<div class="table-option">
-				<div class="row">
-					<div class="column">سطوح تولید پسوورد</div>
-					<div class="column">
-						<select name="general_option" class="general-option">
-							<option class="none">انتخاب</option>
-							<option class="level_1">متوسط</option>
-							<option class="level_2">قوی</option>
-							<option class="level_3">پیشرفته</option>
-						</select><!--.general-option-->
-					</div>
-				</div>
-				<div class="row">
-					<div class="column">طول گذرواژه </div>
-					<div class="column">
-						<input type="number" min="1" max="32" name="password_lenght" id="password-length">
-					</div>
-				</div>
-				<div class="row">
-					<div class="column">گذرواژه شامل علامت ها باشد:</div>
-					<div class="column">
-						<input type="checkbox" name="password_includeS" id="password-includeS">
-						<label for="password-includeS">(بطور مثال : @#$%)</label>
-					</div>
-				</div>
-				<div class="row">
-					<div class="column">گذرواژه شامل اعداد صحیح باشد: </div>
-					<div class="column">
-						<input type="checkbox" name="password_includeN" id="password-includeN">
-						<label for="password-includeN">(بطور مثال 12345)</label>
-					</div>
-				</div>
-				<div class="row">
-					<div class="column">گذرواژه شامل حروف بزرگ انگلیسی باشد: </div>
-					<div class="column">
-						<input type="checkbox" name="password_includeL" id="password-includeL">
-						<label for="password-includeL">(بطور مثال abcdef)</label>
-					</div>
-				</div>
-				<div class="row">
-					<div class="column">گذرواژه شامل حروف بزرگ انگلیسی باشد: </div>
-					<div class="column">
-						<input type="checkbox" name="password_includeU" id="password-includeU">
-						<label for="password-includeU">(بطور مثال ABCDEF)</label>
-					</div>
-				</div>
-				<div class="row">
-					<div class="column">گذرواژه شامل کاراکتر های مبهم باشد: </div>
-					<div class="column">
-						<input type="checkbox" name="password_includeA" id="password-includeA">
-						<label for="password-includeA">(بطور مثال  {}[]()/\'"`~,;:.<)</label>
-					</div>
-				</div>
-				<div class="row">
-					<div class="column">ذخیره تنظیمات</div>
-					<div class="column">
-						<input type="checkbox" name="save_preference" id="save-preference">
-						<label for="save-preference">(ذخیره تنظیمات برای مراجعه بعدی)</label>
-					</div>
-				</div>
-			</div>
-		</div><!--.options-->
-		<div class="btn">
-			<input type="button" name="generate_password" class="generate-password" value="ساخت گذرواژه">		
-			<input type="text" name="password_input" class="password-input">
-		</div><!--.btn-->
-	</div><!--.container-->
-</body>
+        <meta name="keywords" content="پسورد غیر قابل حدس , پسورد غیر قابل هک , passwordGenerator , password-generator , security" />
+        <meta name="robots" content="noodp"/>
+		<meta name="google-site-verification" content="ugoMwBxdN-NQvQVnMxvdv2ijCHDO0lV5PrLsNriWqMs" />
+        <link rel="shortcut icon" href="assets/img/passwordsaz-favicon.png" />
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+        <script type="text/javascript" src="assets/js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript">
+            function getCookie(name) {
+                var value = "; " + document.cookie;
+                var parts = value.split("; " + name + "=");
+                if (parts.length == 2)
+                    return parts.pop().split(";").shift();
+            }
+            $(document).ready(function () {
+                $(".generate-password").click(function () {
+                    var save_pref = $("#save-preference").prop("checked");
+                    document.cookie = "save_pref=" + save_pref;
+                    if (save_pref == true) {
+                        var password_length = $("#password-length").val();
+                        var includeS = $("#password-includeS").prop("checked");
+                        var includeN = $("#password-includeN").prop("checked");
+                        var includeL = $("#password-includeL").prop("checked");
+                        var includeU = $("#password-includeU").prop("checked");
+                        var includeA = $("#password-includeA").prop("checked");
+                        document.cookie = "password_len=" + password_length;
+                        document.cookie = "includeS=" + includeS;
+                        document.cookie = "includeN=" + includeN;
+                        document.cookie = "includeL=" + includeL;
+                        document.cookie = "includeU=" + includeU;
+                        document.cookie = "includeA=" + includeA;
+                    }
+                });
+            });
+        </script>
+        <script type="text/javascript" src="assets/js/script.js"></script>
+    </head>
+    <body>
+        <div class="rng-container">
+            <header>
+                <img class="key" src="assets/img/passwordsaz.png" alt="ایجاد کننده پسورد های ایمن" >
+                <div class="title-wrapper">
+                    <h1 class="title">تولید پسورد آنلاین</h1>
+                    <h2 class="sub-title">پسورد ساز سرویس آنلاین تولید پسورد برای تولید رمز عبور تصادفی</h2>
+                </div>
+            </header>
+            <br>
+            <section id="options">
+                <div class="table-option">
+                    <div class="row">
+                        <div class="column">سطوح تولید پسوورد</div>
+                        <div class="column">
+                            <select name="general_option" class="general-option">
+                                <option class="none">انتخاب</option>
+                                <option class="level_1">متوسط</option>
+                                <option class="level_2">قوی</option>
+                                <option class="level_3">پیشرفته</option>
+                            </select><!--.general-option-->
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="column">طول پسورد </div>
+                        <div class="column">
+                            <input type="number" min="1" max="32" name="password_lenght" id="password-length">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="column">پسورد شامل علامت ها باشد:</div>
+                        <div class="column">
+                            <input type="checkbox" name="password_includeS" id="password-includeS">
+                            <label for="password-includeS">(بطور مثال : @#$%)</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="column">پسورد شامل اعداد صحیح باشد: </div>
+                        <div class="column">
+                            <input type="checkbox" name="password_includeN" id="password-includeN">
+                            <label for="password-includeN">(بطور مثال 12345)</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="column">پسورد شامل حروف بزرگ انگلیسی باشد: </div>
+                        <div class="column">
+                            <input type="checkbox" name="password_includeL" id="password-includeL">
+                            <label for="password-includeL">(بطور مثال abcdef)</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="column">پسورد شامل حروف بزرگ انگلیسی باشد: </div>
+                        <div class="column">
+                            <input type="checkbox" name="password_includeU" id="password-includeU">
+                            <label for="password-includeU">(بطور مثال ABCDEF)</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="column">پسورد شامل کاراکتر های مبهم باشد: </div>
+                        <div class="column">
+                            <input type="checkbox" name="password_includeA" id="password-includeA">
+                            <label for="password-includeA">(بطور مثال  {}[]()/\'"`~,;:.<)</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="column">ذخیره تنظیمات</div>
+                        <div class="column">
+                            <input type="checkbox" name="save_preference" id="save-preference">
+                            <label for="save-preference">(ذخیره تنظیمات برای مراجعه بعدی)</label>
+                        </div>
+                    </div>
+                </div>
+            </section><!--.options-->
+            <div class="btn">
+                <input type="button" name="generate_password" class="generate-password" value="ساخت پسورد">		
+                <input type="text" name="password_input" class="password-input">
+            </div><!--.btn-->
+            <section id="tips">
+                <p>نکاتی در رابطه با امنیت و استفاده از سرویس تولید پسورد آنلاین :</p>
+                <p>۱.جهت ذخیره پسورد ها آنلاین تولید شده می توانید از سرویس گوگل کیپ استفاده کنید.</p>
+                <p>۲.تعداد کاراکتر های مجاز برای پسورد بین ۱ تا ۹۹ کاراکتر است.</p>
+                <p>۳.حداقل یکی از دسته کاراکتر ها را برای تولید پسورد انتخاب کنید.</p>
+                <p>۴.به طور پیشنهادی می توانید یکی از سطوح متوسط ، قوی یا پیشرفته را برای تولید پسورد انتخاب کنید.</p>
+                <p>۵.اگر مایلید تنظیمات اعمال شده برای تولید پسورد در مراجعات بعدی نیز بماند تیک گزینه ذخیره تنظیمات را بزندید.</p>
+                <p>۶.تنها در صورت نیاز از کاراکتر های مبهم استفاده کنید.</p>
+                <p>۷.سعی کنید پسوردی کمتر از ۱۲ کاراکتر نسازید.</p>
+                <p>۸.از نام خود یا افراد خانواده برای پسورد استفاده نکنید.</p>
+                <p>۹.از یک پسورد برای چند حساب کاربری استفاده نکنید. در این صورت با پیدا شدن یک پسورد هکر به تمامی حساب های کاربری شما دسترسی خواهند داشت</p>
+                <p>۱۰.برای امنیت حداکثری می توانید از سرویس پسورد ساز برای ساخت نام کاربری هم استفاده کنید. ۷ کاراکتر و حروف کوچک لاتین و اعداد گزینه های پیشنهادی برای نام کاربری برای اکانت است.</p>
+                <p>۱۱.برای امنیت حداکثری پیشنهاد می شود پسورد خود را هر ده هفته عوض کنید.</p>
+                <p>۱۲.حتما برای اکانت های کاربری مهم از احراز هویت دومرحله ای (two step verification) استفاده کنید.</p>
+                <p>۱۳.پس از تولید پسورد با استفاده از پسورد ساز آنلاین بحث مهم محافظت از پسورد را فراموش نکنید</p>
+                <p>۱۴.پسورد خود را به صورت ایمیل یا پیام برای کسی ارسال نکنید.</p>
+                <p>۱۵.در سرویس هایی که پس از ثبت نام پسورد برای شما ارسال می شود بلافاصله بعد از ورود به حساب کاربری پسورد خود را عوض کنید.</p>
+                <p>۱۶.از عبارات قابل حدس برای پسورد خود انتخاب نکنید. مثال iloveyou</p>
+                <p>۱۷.امنیت کامپیوتر خود را فراموش نکنید. انتخاب پسورد و فایروال و آنتی ویروس برای سیستم عامل شما باعث امنیت بیشتر کامپیوتر شما می شود.</p>
+                <p>۱۸.معمولا سرویس های آنلاین از الگوریتم های رمز نگاری غیر قال برگشت نظیر md5 برای ذخیره پسورد استفاده می کنند. این الگوریتم ها به صورت تئوری غیر قابل بازگشت ولی به صورت عملی قابل بازگشت هستند. پیچیده بودن پسورد شما امکان بازگشت پسورد را برای هکر ها سخت می کند</p>
+                <p>۱۹.همیشه سیستم عامل خود را بروز نگه دارید و از آخرین نسخه های مرورگر وب (فایرفاکس ، گوگل کروم ، اوپرا) استفاده کنید.</p>
+                <p>۲۰.به هیچ وجه بر روی لینک های ناشناس کلیک نکنید. هکرها با استفاده از این لینک ها کوکی مرورگر شما رو می دزدند و با آن اطلاعات  لاگین شما را به دست می آوردند.از این گونه حملات با نام XSS , CSRF یاد می شود.</p>
+            </section>
+            <footer>
+                <a href="#" class="return-top">برو بالا &#8593;</a>
+                <p class="copyright">توسعه و پیاده سازی توسط <a target="_blank" href="https://asabagh.ir" title="">ابوالفضل صباغ</a></p>
+            </footer>
+        </div><!--.container-->
+    </body>
 </html>

@@ -46,7 +46,7 @@ $(document).ready(function () {
         $(".general-option").change(function(){
             var option_class = $(".general-option").find("option:selected").attr('class');
             if(option_class == 'level_1'){
-                $("#password-length").val("8");
+                $("#password-length").val("12");
                 $("#password-includeS").prop("checked" , false);
                 $("#password-includeN").prop("checked" , true);
                 $("#password-includeL").prop("checked" , true);
@@ -54,7 +54,7 @@ $(document).ready(function () {
                 $("#password-includeA").prop("checked" , false);
             }
             if(option_class == 'level_2'){
-                $("#password-length").val("12");
+                $("#password-length").val("14");
                 $("#password-includeS").prop("checked" , true);
                 $("#password-includeN").prop("checked" , true);
                 $("#password-includeL").prop("checked" , true);
@@ -62,12 +62,11 @@ $(document).ready(function () {
                 $("#password-includeA").prop("checked" , false);
             }
             if(option_class == 'level_3'){
-                $("#password-length").val("16");
+                $("#password-length").val("18");
                 $("#password-includeS").prop("checked" , true);
                 $("#password-includeN").prop("checked" , true);
                 $("#password-includeL").prop("checked" , true);
                 $("#password-includeU").prop("checked" , true);
-                $("#password-includeA").prop("checked" , true);
             }
         });
     //generate password function
@@ -84,8 +83,11 @@ $(document).ready(function () {
         var password_includeU = false;
         var password_includeA = false;
         var content = '';
-        if(password_length > 32){
-            password_length = 32;
+        if(password_length > 99){
+            password_length = 99;
+        }
+        if(password_length < 1){
+            password_length = 1;
         }
         if($("#password-includeS").is(":checked")){
             content += password_includeS_content;
@@ -213,5 +215,9 @@ $(document).ready(function () {
     });
 $(".password-input").click(function(){
     $(this).select();
-})
+});
+$('.return-top').click(function(){
+    $("html, body").animate({ scrollTop: 0 }, 600);
+    return false;
+});
 });
